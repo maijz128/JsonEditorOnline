@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>JSON Editor Online: JSON editor, JSON formatter, query JSON</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description"
+    content="JSON Editor Online is a web-based tool to view, edit, format, repair, compare, query, transform, validate, and share your JSON data." />
+  <meta name="keywords"
+    content="json, editor, online, formatter, view, edit, format, repair, compare, query, transform, validate, search, share, formatter, json editor, json editor online, online json editor, tool, json tools, open source, free, json parser, json parser online, json formatter, json formatter online, online json formatter, online json parser, format json online, json table viewer, json table editor, json grid" />
+  <meta name="author" content="Jos de Jong" />
+  <meta name="theme-color" content="#7fa360" />
+  <link rel="canonical" href="https://jsoneditoronline.org" />
+  <link rel="shortcut icon" href="/favicon.png" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="manifest" href="/manifest.json" />
+  <script>function gtag() { dataLayer.push(arguments) } window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "UA-42777816-3"), gtag("config", "G-EW0NH10KBT")</script>
+  <link rel="preconnect" href="https://cdn.intergi.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.intergient.com" crossorigin />
+  <link rel="preconnect" href="https://securepubads.g.doubleclick.net" crossorigin />
+  <link rel="preconnect" href="https://cm.g.doubleclick.net" crossorigin />
+  <link rel="preconnect" href="https://z.moatads.com" crossorigin />
+  <script>window.ramp = window.ramp || {}, window.ramp.que = window.ramp.que || []</script>
+  <script rel="preconnect" src="/cdn-cgi/cdn.intergient.com/ramp_config.js"></script>
+  <script>window._pwGA4PageviewId = "".concat(Date.now()), window.dataLayer = window.dataLayer || [], window.gtag = window.gtag || function () { dataLayer.push(arguments) }, gtag("js", new Date), gtag("config", "G-BNM7BTR8KC", { send_page_view: !1 }), gtag("event", "ramp_js", { send_to: "G-BNM7BTR8KC", pageview_id: window._pwGA4PageviewId })</script>
+  <script defer="defer" src="/static/js/main.0e3f15a4.js"></script>
+  <link href="/static/css/main.c820c42b.css" rel="stylesheet">
+</head>
+
+<body class="main">
+  <script>function isIE() { var e = navigator.userAgent.toLowerCase(); return -1 !== e.indexOf("msie") || -1 !== e.indexOf("trident") } if (isIE()) { console.error("Internet Explorer detected. IE is not supported."); var ieError = document.createElement("div"); ieError.style.color = "red", ieError.style.padding = "10px", ieError.appendChild(document.createTextNode("Error: Internet Explorer is not supported. Please open JSON Editor Online in a newer browser.")), document.body.appendChild(ieError) }</script>
+  <script>function scrollToElement(o, e = !0) { const l = document.querySelector(o); l && (l.scrollIntoView({ behavior: "smooth" }), e && setTimeout((() => { location.hash = o }), 500)) } function scrollToSection(o) { console.log("scroll to", o), enablePageScroll(), setTimeout((() => { scrollToElement(`[data-id="${o}"]`, !1) }), 100) } function enablePageScroll() { document.documentElement.style.overflow = "auto" } function disablePageScroll() { document.documentElement.style.overflow = "hidden", document.documentElement.scrollTop = 0 }</script>
+  <div class="menu" id="application-menu"><a class="name" href="/">
+      <div title="JSON Editor Online" class="logo"></div>
+    </a>
+    <div class="space"></div>
+    <div class="menu-button-group"><a id="news-highlight" href="/#/news" data-maintain-query-params
+        class="button news-highlight" onclick="markNewsAsRead()"><svg aria-hidden="true" focusable="false"
+          data-prefix="fas" data-icon="burst" class="svg-inline--fa fa-burst" role="img"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="currentColor"
+            d="M200.9 116.2L233.2 16.6C236.4 6.706 245.6 .001 256 .001C266.4 .001 275.6 6.706 278.8 16.6L313.3 123.1L383.8 97.45C392.6 94.26 402.4 96.43 408.1 103C415.6 109.6 417.7 119.4 414.6 128.2L388.9 198.7L495.4 233.2C505.3 236.4 512 245.6 512 256C512 266.4 505.3 275.6 495.4 278.8L392.3 312.2L445.2 412.8C450.1 422.1 448.4 433.5 440.1 440.1C433.5 448.4 422.1 450.1 412.8 445.2L312.2 392.3L278.8 495.4C275.6 505.3 266.4 512 256 512C245.6 512 236.4 505.3 233.2 495.4L199.8 392.3L99.17 445.2C89.87 450.1 78.46 448.4 71.03 440.1C63.6 433.5 61.87 422.1 66.76 412.8L119.7 312.2L16.6 278.8C6.705 275.6 .0003 266.4 .0003 256C.0003 245.6 6.705 236.4 16.6 233.2L116.2 200.9L4.208 37.57C-2.33 28.04-1.143 15.2 7.03 7.03C15.2-1.144 28.04-2.33 37.57 4.208L200.9 116.2z">
+          </path>
+        </svg> News</a>
+      <div id="theme-toggle" class="theme-toggle-placeholder"></div>
+      <div class="button static-dropdown-button">
+        <div class="static-dropdown-description">Features <svg aria-hidden="true" focusable="false" data-prefix="fas"
+            data-icon="caret-down" class="svg-inline--fa fa-caret-down" role="img" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 320 512">
+            <path fill="currentColor"
+              d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z">
+            </path>
+          </svg></div>
+        <div class="static-dropdown-menu"><a href="/features.html#editor" class="button dropdown-menu-button">View and
+            edit </a><a href="/features.html#formatter" class="button dropdown-menu-button">Format </a><a
+            href="/features.html#query" class="button dropdown-menu-button">Query and transform </a><a
+            href="/features.html#compare" class="button dropdown-menu-button">Compare </a><a
+            href="/features.html#repair" class="button dropdown-menu-button">Repair </a><a
+            href="/features.html#validate" class="button dropdown-menu-button">Validate </a><a
+            href="/features.html#share" class="button dropdown-menu-button">Share </a><a
+            href="/docs/index.html#export-to-csv" class="button dropdown-menu-button">Export to CSV </a><a
+            href="/features.html#large-documents" class="button dropdown-menu-button">Process large files </a><a
+            href="/features.html#offline-support" class="button dropdown-menu-button">Offline support</a></div>
+      </div>
+      <div class="button static-dropdown-button">
+        <div class="static-dropdown-description">Help <svg aria-hidden="true" focusable="false" data-prefix="fas"
+            data-icon="caret-down" class="svg-inline--fa fa-caret-down" role="img" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 320 512">
+            <path fill="currentColor"
+              d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z">
+            </path>
+          </svg></div>
+        <div class="static-dropdown-menu"><a id="news" href="/#/news" data-maintain-query-params
+            class="button dropdown-menu-button"><svg aria-hidden="true" focusable="false" data-prefix="fas"
+              data-icon="burst" class="svg-inline--fa fa-burst" role="img" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512">
+              <path fill="currentColor"
+                d="M200.9 116.2L233.2 16.6C236.4 6.706 245.6 .001 256 .001C266.4 .001 275.6 6.706 278.8 16.6L313.3 123.1L383.8 97.45C392.6 94.26 402.4 96.43 408.1 103C415.6 109.6 417.7 119.4 414.6 128.2L388.9 198.7L495.4 233.2C505.3 236.4 512 245.6 512 256C512 266.4 505.3 275.6 495.4 278.8L392.3 312.2L445.2 412.8C450.1 422.1 448.4 433.5 440.1 440.1C433.5 448.4 422.1 450.1 412.8 445.2L312.2 392.3L278.8 495.4C275.6 505.3 266.4 512 256 512C245.6 512 236.4 505.3 233.2 495.4L199.8 392.3L99.17 445.2C89.87 450.1 78.46 448.4 71.03 440.1C63.6 433.5 61.87 422.1 66.76 412.8L119.7 312.2L16.6 278.8C6.705 275.6 .0003 266.4 .0003 256C.0003 245.6 6.705 236.4 16.6 233.2L116.2 200.9L4.208 37.57C-2.33 28.04-1.143 15.2 7.03 7.03C15.2-1.144 28.04-2.33 37.57 4.208L200.9 116.2z">
+              </path>
+            </svg> News </a><a href="/docs/index.html" class="button dropdown-menu-button"><svg aria-hidden="true"
+              focusable="false" data-prefix="fas" data-icon="book" class="svg-inline--fa fa-book" role="img"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path fill="currentColor"
+                d="M448 336v-288C448 21.49 426.5 0 400 0H96C42.98 0 0 42.98 0 96v320c0 53.02 42.98 96 96 96h320c17.67 0 32-14.33 32-31.1c0-11.72-6.607-21.52-16-27.1v-81.36C441.8 362.8 448 350.2 448 336zM143.1 128h192C344.8 128 352 135.2 352 144C352 152.8 344.8 160 336 160H143.1C135.2 160 128 152.8 128 144C128 135.2 135.2 128 143.1 128zM143.1 192h192C344.8 192 352 199.2 352 208C352 216.8 344.8 224 336 224H143.1C135.2 224 128 216.8 128 208C128 199.2 135.2 192 143.1 192zM384 448H96c-17.67 0-32-14.33-32-32c0-17.67 14.33-32 32-32h288V448z">
+              </path>
+            </svg> Docs </a><a href="/indepth/" class="button dropdown-menu-button"><svg aria-hidden="true"
+              focusable="false" data-prefix="fas" data-icon="book" class="svg-inline--fa fa-book" role="img"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path fill="currentColor"
+                d="M448 336v-288C448 21.49 426.5 0 400 0H96C42.98 0 0 42.98 0 96v320c0 53.02 42.98 96 96 96h320c17.67 0 32-14.33 32-31.1c0-11.72-6.607-21.52-16-27.1v-81.36C441.8 362.8 448 350.2 448 336zM143.1 128h192C344.8 128 352 135.2 352 144C352 152.8 344.8 160 336 160H143.1C135.2 160 128 152.8 128 144C128 135.2 135.2 128 143.1 128zM143.1 192h192C344.8 192 352 199.2 352 208C352 216.8 344.8 224 336 224H143.1C135.2 224 128 216.8 128 208C128 199.2 135.2 192 143.1 192zM384 448H96c-17.67 0-32-14.33-32-32c0-17.67 14.33-32 32-32h288V448z">
+              </path>
+            </svg> Knowledge base </a><a id="faq" href="/#/faq" data-maintain-query-params
+            class="button dropdown-menu-button"><svg aria-hidden="true" focusable="false" data-prefix="fas"
+              data-icon="circle-question" class="svg-inline--fa fa-circle-question" role="img"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="currentColor"
+                d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z">
+              </path>
+            </svg> FAQ </a><a id="about" href="/#/about" data-maintain-query-params
+            class="button dropdown-menu-button"><svg aria-hidden="true" focusable="false" data-prefix="fas"
+              data-icon="circle-info" class="svg-inline--fa fa-circle-info" role="img"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="currentColor"
+                d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z">
+              </path>
+            </svg> About </a><a href="/feedback.html" class="button dropdown-menu-button"><svg aria-hidden="true"
+              focusable="false" data-prefix="fas" data-icon="comment" class="svg-inline--fa fa-comment" role="img"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="currentColor"
+                d="M256 32C114.6 32 .0272 125.1 .0272 240c0 49.63 21.35 94.98 56.97 130.7c-12.5 50.37-54.27 95.27-54.77 95.77c-2.25 2.25-2.875 5.734-1.5 8.734C1.979 478.2 4.75 480 8 480c66.25 0 115.1-31.76 140.6-51.39C181.2 440.9 217.6 448 256 448c141.4 0 255.1-93.13 255.1-208S397.4 32 256 32z">
+              </path>
+            </svg> Feedback</a></div>
+      </div>
+      <div class="ad-margin"></div>
+    </div>
+  </div>
+  <script>function appendPreviousQueryParams(e) { const t = localStorage[window.LAST_QUERY_PARAMS_KEY] || ""; t && (location.href = e.target.href + "?" + t, e.preventDefault()) } window.LAST_QUERY_PARAMS_KEY = "lastQueryParams", document.getElementById("news-highlight").addEventListener("click", appendPreviousQueryParams), document.getElementById("news").addEventListener("click", appendPreviousQueryParams), document.getElementById("faq").addEventListener("click", appendPreviousQueryParams), document.getElementById("about").addEventListener("click", appendPreviousQueryParams)</script>
+  <script>const latestNewsDate = new Date("2023-01-21T12:00:00.000Z"), newsDateKey = "newsLastOpenedISODate", applicationMenu = document.getElementById("application-menu"); function markNewsAsRead() { localStorage[newsDateKey] = (new Date).toISOString(), applicationMenu && applicationMenu.classList.toggle("has-news", !1) } document.getElementById("news-highlight").addEventListener("click", markNewsAsRead), document.getElementById("news").addEventListener("click", markNewsAsRead); const newsLastOpenedISODate = localStorage[newsDateKey], hasNews = "string" == typeof newsLastOpenedISODate && new Date(newsLastOpenedISODate) < latestNewsDate; hasNews && applicationMenu && applicationMenu.classList.toggle("has-news", !0)</script>
+  <div id="root"><noscript>You need to enable JavaScript to run this app.</noscript></div>
+  <div class="info">
+    <div class="section">
+      <div class="section-inner">
+        <h1>JSON Editor Online</h1>
+        <p>JSON Editor Online is a web-based tool to view, edit, format, repair, compare, query, transform, validate,
+          and share your JSON data.</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-inner">
+        <h2 data-id="about">About JSON Editor Online</h2>
+        <p>JSON Editor Online is a versatile, high quality tool to edit and process your JSON data. It is one of the
+          best and most popular tools around, has a high user satisfaction, and is completely free. The editor offers
+          all your need in one place: from formatting and <a
+            href="https://jsoneditoronline.org/indepth/beautify/beautify-json/">beautifying your JSON data</a> to
+          comparing JSON documents or querying your JSON data. <a href="https://www.json.org/" target="_blank">JSON</a>
+          is the most used data format between servers and browser, and JSON Editor Online is an indispensable tool for
+          frontend and backend developers working with JSON data in their daily life.</p>
+        <p>JSON Editor Online is developed and maintained by <a href="https://github.com/josdejong/" target="_blank">Jos
+            de Jong</a>, an enthusiastic, passionate senior software engineer with 20+ years of experience in the field.
+          Jos created the editor out of personal needs, working with JSON based API's and databases on a daily basis as
+          a full-stack engineer.</p>
+        <p>JSON Editor Online offers the following <a href="features.html">features</a>:</p>
+        <ul>
+          <li><a href="features.html#editor">Online JSON editor and JSON viewer</a></li>
+          <li><a href="docs/index.html#modes">Text mode, tree mode, and table mode</a></li>
+          <li><a href="features.html#formatter">JSON formatter and JSON beautifier</a></li>
+          <li><a href="features.html#query">Query and transform JSON</a></li>
+          <li><a href="features.html#compare">Compare JSON documents</a></li>
+          <li><a href="features.html#repair">Repair JSON documents</a></li>
+          <li><a href="features.html#validate">JSON Schema validation</a></li>
+          <li><a href="features.html#share">Load, save and share JSON online</a></li>
+          <li><a href="docs/index.html#export-to-csv">Export JSON to CSV</a></li>
+          <li><a href="features.html#large-documents">Process large files</a></li>
+          <li><a href="features.html#offline-support">Offline support</a></li>
+        </ul>
+        <p>Current version: 6.12.6</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-inner">
+        <h2 data-id="news">News</h2>
+        <h3 class="news-item">Full screen mode</h3>
+        <div class="date">2023-01-21</div>
+        <div class="columns">
+          <div class="column left">
+            <p>You can now display the editor in full-screen, to get the maximum out of your screen space. Especially
+              handy for the table view, which can easily get wide if you have many columns.</p>
+          </div>
+          <div class="column right"><img alt="Lossless JSON Parser" src="images/news/full_screen.png" width="295"
+              height="87" /></div>
+        </div>
+        <h3 class="news-item">Table mode</h3>
+        <div class="date">2022-12-07</div>
+        <div class="columns">
+          <div class="column left">
+            <p>A long awaited feature finally landed: table mode. Table mode is great when having a structured array
+              with JSON objects. It is similar to editing data in a spreadsheet. Viewing your data in table view gives a
+              lot of insight. You can sort the data by column, and edit values. JSON Editor Online can flatten nested
+              object properties in separate columns, and can also open nested contents in a popup.</p>
+            <p>You can use json to table online by clicking "table" it in the mode toggle, top left in the menu.</p>
+            <p>Just like tree mode, table mode can handle documents up to 512 MB with ease. You can smoothly scroll
+              through documents with hundreds of thousands of rows &#x1f680;.</p>
+          </div>
+          <div class="column right"><img alt="Table mode" src="images/news/table_mode.png" width="431" height="268" />
+          </div>
+        </div>
+        <p>This first version of table mode comes with some limitations. For example, it is not yet possible to insert
+          and remove rows and columns. These features will be implemented in the near future.</p>
+        <p><a href="https://jsoneditoronline.org/docs/index.html#table-mode">Read more</a></p>
+        <h3 class="news-item">New and customizable theme colors</h3>
+        <div class="date">2022-10-10</div>
+        <p>The theme colors are changed from green+brown to two more calm green colors. And you can select alternative
+          the theme colors to match your taste. Theme colors and light or dark mode can be selected via the "Theme" menu
+          item in the top right corner of the application.</p>
+        <div class="columns">
+          <div class="column left">Old, classic theme colors: <img alt="Classic theme" src="images/news/theme_old.png"
+              width="306" height="165" /></div>
+          <div class="column right">New, customizable theme colors: <img alt="New customizable themes"
+              src="images/news/theme_new.png" width="400" height="371" /></div>
+        </div>
+        <h3 class="news-item">Lossless JSON Parser</h3>
+        <div class="date">2022-09-30</div>
+        <div class="columns">
+          <div class="column left">
+            <p>JSON Editor Online can now switch between two parsers: the native JSON parser (built-in the browser), or
+              a new Lossless JSON Parser. Unlike the native parser, the Lossless JSON Parser can handle long numbers
+              like <code>9123372036854000123</code> and can maintain the formatting of numbers like <code>4.0</code>.
+            </p>
+            <p>Since the early days of JSON Editor Online, more than 10 years ago, users regularly reported issues of
+              the editor sometimes corrupting large numbers in their JSON documents. We haven't been able to solve this
+              until now. In this article we explain the problem in-depth and show how we solved it in JSON Editor
+              Online: <a
+                href="https://jsoneditoronline.org/indepth/parse/why-does-json-parse-corrupt-large-numbers/">Why does
+                JSON.parse corrupt large numbers and how to solve this?</a></p>
+          </div>
+          <div class="column right"><img alt="Lossless JSON Parser" src="images/news/lossless_json_parser.png"
+              width="339" height="253" /></div>
+        </div>
+        <h3 class="news-item">Mobile-friendly</h3>
+        <div class="date">2022-08-29</div>
+        <div class="columns">
+          <div class="column left">
+            <p>The JSON Editor Online application is now mobile-friendly, you can enjoy it on smaller screens and touch
+              devices too!<br /><br /><br /><br /></p>
+          </div>
+        </div>
+        <h3 class="news-item">Secure connection and open urls via proxy</h3>
+        <div class="date">2022-07-19</div>
+        <div class="columns">
+          <div class="column left">
+            <p>JSON Editor Online now enforces a secure connection (https), which is better for, you know, security.
+              This does not allow to load urls from an unsecure connection (http) though. To cater for that, you can now
+              load those urls via a proxy, as long as they are public on the internet.</p>
+          </div>
+          <div class="column right"><img alt="Export JSON to CSV" src="images/news/open_url_via_proxy.png" width="277"
+              height="261" /></div>
+        </div>
+        <h3 class="news-item">Export to CSV</h3>
+        <div class="date">2022-06-07</div>
+        <div class="columns">
+          <div class="column left">
+            <p>A useful new feature: you can now export your JSON to CSV via menu "Save", "Export to CSV". A typical use
+              case is to load your JSON data into JSON Editor Online and preprocess it there by filtering, sorting, and
+              picking relevant properties. Then, you can export your data to CSV and open it in a Spreadsheet
+              application to do further analysis like plot graphs.</p>
+          </div>
+          <div class="column right"><img alt="Export JSON to CSV" src="images/news/export_csv.png" width="413"
+              height="314" /></div>
+        </div>
+        <h3 class="news-item">Changelog</h3>
+        <p>Want to know more? An overview describing the full history is available in the <a
+            href="changelog.html">changelog.html</a>.</p>
+      </div>
+    </div>
+    <div class="section faq">
+      <div class="section-inner">
+        <h2 data-id="faq">Frequently asked questions (FAQ)</h2>
+        <h3>How do I edit a JSON file?</h3>
+        <p>Copy and paste your JSON file in the JSON editor, or load it from disk via the menu or via drag-and-drop.
+          Then, you can edit the contents similar to how you use any text editor: enter new content with your keyboard,
+          and right-click to open a context menu with actions like copy/paste, insert, remove. You can learn more in the
+          <a href="docs/index.html">Documentation</a>.</p>
+        <h3>How do I format a JSON file?</h3>
+        <p>You can use the editor as a json formatter. In code mode, you can paste a JSON file in the editor, and click
+          the "Format" button from the menu. In tree mode, you can just paste the file and copy it again: the contents
+          will automatically be formatted. Alternatively, you can also use the "Copy formatted" button from the menu to
+          be done in one click. <a href="docs/index.html#format">Read more.</a></p>
+        <h3><a href="https://jsoneditoronline.org/indepth/beautify/beautify-json/">How do I beautify JSON data?</a></h3>
+        <p>Format JSON is the same as beautify JSON : you make your JSON file readable by styling it with white spacing,
+          newlines, and indentation. In short: paste your JSON file, then click the "Format" button in code mode, or
+          select "Copy formatted" from the menu. This is how you make your JSON pretty. <a
+            href="docs/index.html#format">Read more.</a></p>
+        <h3>Can I use JSON editor as a JSON cleaner?</h3>
+        <p>Yes, definitely! Cleaning JSON is the same as "beautifying" or "formatting" JSON: you make the JSON data
+          neatly readable. So you can use JSON Editor Online as a JSON cleaner by opening your document and then
+          clicking the "Format" button.</p>
+        <h3>How do I query JSON data?</h3>
+        <p>You can query JSON data by clicking the "Transform" button from the menu or between the two panels. This will
+          open a modal where you can write a query, see a preview, and then transform JSON data. <a
+            href="docs/index.html#transform">Read more.</a></p>
+        <h3>How do I compare JSON files?</h3>
+        <p>You can compare JSON files by opening them in the left and right panel of the editor. Click the "Compare"
+          button in the "Differences" section between the two panels, and make sure you switch both panels to "Tree"
+          mode. All JSON differences will be highlighted. <a href="docs/index.html#compare">Read more.</a></p>
+        <h3>How do I repair JSON data?</h3>
+        <p>Just drop your data in JSON Editor Online. In many cases it will automatically repair the data for you, and
+          if not possible, it will point you to the place where the issue is and assist you with repairing it. <a
+            href="docs/index.html#repair">Read more.</a></p>
+        <h3>How do I fix JSON format errors?</h3>
+        <p>Open your JSON file in JSON Editor Online, then click the "Format" button from the menu when in
+          <code>text</code> mode. Read more in <a href="docs/index.html#format">the docs about JSON repair</a>, or read
+          more about <a href="https://jsoneditoronline.org/indepth/parse/fix-json/">common JSON issues and how to fix
+            them</a>.</p>
+        <h3>How do I check if a JSON file is valid?</h3>
+        <p>Simply open the JSON file in JSON Editor Online to see if the document itself is valid. If not, the editor
+          will point out the error and if possible offer to <a href="docs/#repair">auto-repair the document</a>.</p>
+        <h3>What is a JSON validator?</h3>
+        <p>A JSON validator verifies whether your JSON document adheres to the <a
+            href="https://www.ecma-international.org/publications-and-standards/standards/ecma-404/">JSON
+            specification</a>. On top of this, you can use a JSON schema validator to <a
+            href="docs/#validate">validate</a> whether the contents of your document adheres to a specified schema.</p>
+        <h3>What is a JSON beautifier and validator?</h3>
+        <p><a href="https://jsoneditoronline.org/indepth/beautify/beautify-json/">Beautifying JSON</a> is neatly
+          formatting its contents with indentation and new lines to make it better readable. Software developers often
+          validate JSON and then <a href="docs/#format">format</a> it in one go in order to inspect the document.</p>
+        <h3>Why use the editor as a JSON Validator?</h3>
+        <p>Using an online JSON editor is useful for validating, <a href="docs/#repair">repairing</a>, <a
+            href="docs/#format">formatting</a>, and <a href="docs/#transform">querying</a> JSON data on the fly. When
+          working with JSON configuration files in a project though, it may be handier to use your own IDE. There are <a
+            href="https://jsoneditoronline.org/indepth/tools/4-handy-categories-of-json-tools/">various categories of
+            JSON tools</a>, each with their pros and cons. What is best to use depends on your use case.</p>
+        <h3>How do I validate my JSON data against a JSON Schema?</h3>
+        <p>Open your JSON file in the editor. From the menu, select "Options", "JSON Schema". A modal will open where
+          you can configure your JSON schema. <a href="docs/index.html#validate">Read more.</a></p>
+        <h3>How can I convert JSON to CSV?</h3>
+        <p>Open your JSON file in the editor. From the menu, select "Save", "Export to CSV". A modal will open where you
+          see a preview and can save the CSV data as file or copy it to your clipboard. <a
+            href="docs/index.html#export-to-csv">Read more.</a></p>
+        <h3>What is the best JSON editor?</h3>
+        <p>A survey shows that 85% of the people using JSON Editor Online are highly satisfied with it. They are
+          overwhelmingly positive and call it the best JSON formatter and editor. They are very positive about the
+          quality of the all in 1 editor, which has proven itself useful for millions of users for more than 10 years
+          already. People also love the fact that this is a free JSON editor.</p>
+        <h3>What is the best JSON formatter?</h3>
+        <p>This question is more or less the same as the previous question "What is the best JSON editor?". JSON Editor
+          Online is also a JSON formatter and JSON beautifier. Formatting is just one of the many features it offers.
+        </p>
+        <h3>Are JSON Formatters safe?</h3>
+        <p>In general, yes, you don't have to worry. <a href="https://jsoneditoronline.org">JSON Editor Online</a> takes
+          all possible measures: it enforces a secure HTTPS connection and keeps all used software actively up to date.
+          All you do stays inside your browser, and no data is shared anywhere except when you save a document in the
+          cloud. Cloud documents are publicly accessible for anyone who has the document id, so make sure you do not
+          save documents with sensitive information in the cloud.</p>
+        <h3>Does it have a dark mode?</h3>
+        <p>Yes! JSON Editor Online has a light mode and a dark mode. You can toggle this in the main menu on top.</p>
+        <h3>Can I open large JSON files?</h3>
+        <p>Yes! JSON Editor Online can work with large files up to 512 MB &#x1f680;.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="column">
+      <h2>Attribution</h2>
+      <p>This web application is made possible thanks to many open source projects ❤️, most notably: <a
+          href="https://github.com/josdejong/svelte-jsoneditor" target="_blank">svelte-jsoneditor</a>, <a
+          href="https://codemirror.net" target="_blank">CodeMirror</a>, <a href="https://ajv.js.org" target="_blank">Ajv
+          JSON Schema validator</a>, <a href="https://www.npmjs.com/package/diff-sequences"
+          target="_blank">diff-sequences</a>, <a href="https://lodash.com" target="_blank">Lodash</a>, <a
+          href="https://jmespath.org" target="_blank">JMESPath</a>, <a href="https://github.com/zemirco/json2csv"
+          target="_blank">json2csv</a>, <a href="https://vanilla-picker.js.org" target="_blank">vanilla-picker</a>, <a
+          href="https://github.com/josdejong/jsonrepair" target="_blank">jsonrepair</a>, <a
+          href="https://fontawesome.com" target="_blank">Font Awesome</a>, <a href="https://svelte.dev"
+          target="_blank">Svelte</a>, <a href="https://reactjs.org" target="_blank">React</a>, <a
+          href="https://rollupjs.org" target="_blank">Rollup</a>, <a href="https://babeljs.io"
+          target="_blank">Babel</a>.</p>
+    </div>
+    <div class="column">
+      <h2>Data policy</h2>
+      <p>No data is shared anywhere except when you save a document in the cloud. Cloud documents are publicly
+        accessible for anyone who has the document id.</p>
+      <p>DO NOT SAVE SENSITIVE DATA USING THE CLOUD FUNCTIONALITY</p>
+    </div>
+    <div class="column">
+      <h2>Privacy policy</h2>
+      <p>This site uses cookies and similar tracking technologies such as the Common ID cookie to provide its services.
+        <a href="https://jsoneditoronline.org/privacy-policy.html" target="_blank">Click here for information or to opt
+          out</a>.</p>
+    </div>
+    <div class="column">
+      <h2>Advertising</h2>
+      <p>For any advertising inquiries please contact <a
+          href="/cdn-cgi/l/email-protection#cdbeaca1a8be8dbda1acb4baa4bfa8e3aea2a0"><span class="__cf_email__"
+            data-cfemail="1764767b726457677b766e607e65723974787a">[email&#160;protected]</span></a>.</p>
+    </div>
+  </div>
+  <div class="footer">
+    <div>JSON Editor Online 6.12.6 - Copyright © 2011-2023 - Jos de Jong - <a
+        href="/cdn-cgi/l/email-protection#f49d9a929bb49e879b9a91909d809b869b9a989d9a91da9b8693"><span
+          class="__cf_email__"
+          data-cfemail="2e474048416e445d41404b4a475a415c41404247404b00415c49">[email&#160;protected]</span></a></div>
+  </div>
+  <script data-cfasync="false" src="/cdn-cgi/email-decode.min.js"></script>
+  <script>window.disablePageScroll(), window.addEventListener("resize", (() => { "hidden" === document.documentElement.style.overflow && document.documentElement.clientWidth > 980 && (document.documentElement.scrollTop = 0) }))</script>
+</body>
+
+</html>
